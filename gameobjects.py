@@ -18,11 +18,11 @@ class Entity(GameObject):
         self.texture = texture
         self.collision = collision
         self.controllable = controllable
-    def moveUp:
-        self.y--
-    def moveDown:
-        self.y++
-    def moveLeft:
-        self.x--
-    def moveRight:
-        self.x++
+    def moveUp(self):
+        self.y-=1
+    def moveDown(self):
+        self.y+=1
+    def moveLeft(self):
+        self.x-=1
+    def moveRight(self):
+        self.x+=1
