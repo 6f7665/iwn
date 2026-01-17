@@ -5,12 +5,15 @@ import time
 import queue
 import sys
 
+
 # self coded classes
-import ActionHandler
+from actionhandler import ActionHandler
 
 running = True
 keyQueue = queue.Queue()
 gameState = queue.Queue()
+
+entityList = []
 
 class Logic(Thread):
     def __init__(self):
@@ -23,9 +26,10 @@ class Logic(Thread):
         while running:
             for entity in entityList:
                 if entity.controllable == True:
+                    pass
                     #wait for keyaction
                 else:
-                    entitiy.aimove()
+                    entity.aimove()
             # get the action
             while not keyQueue.empty():
                 actionHandler.execute(keyQueue.get())
